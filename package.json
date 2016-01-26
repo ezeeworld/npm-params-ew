@@ -1,0 +1,16 @@
+{
+  "name": "params-ew",
+  "main": "params.js",
+  "version": "1.0.2",
+  "description": "",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.0.1",
+    "log-ew": "^1.0.2",
+    "mongoose": "^4.3.7"
+  }
+}
