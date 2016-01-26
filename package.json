@@ -1,7 +1,11 @@
 {
   "name": "params-ew",
   "main": "params.js",
-  "version": "1.0.2",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ezeeworld/npm-params-ew.git"
+  },
+  "version": "1.0.6",
   "description": "",
   "scripts": {
     "test": "mocha test"
@@ -9,8 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.0.1",
-    "log-ew": "^1.0.2",
-    "mongoose": "^4.3.7"
+    "lodash": "~4.0.1",
+    "log-ew": "~1.0.6",
+    "mongoose": "~4.3.7"
   }
 }
