@@ -5,7 +5,7 @@
     "type" : "git",
     "url" : "https://github.com/ezeeworld/npm-params-ew.git"
   },
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "",
   "scripts": {
     "test": "mocha test"
@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "lodash": "~4.0.1",
-    "log-ew": "~1.0.6",
+    "log-ew": "~1.0.8",
     "mongoose": "~4.3.7"
   }
 }
