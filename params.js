@@ -1,8 +1,17 @@
 'use strict';
 
-var _ = require('lodash');
-var mongoose = require('mongoose');
-var log = require('log-ew');
+var _, mongoose;
+
+module.exports = function(inject) {
+    if (inject) {
+        _ = inject._
+        mongoose = inject.mongoose;
+    }
+    if (_ === undefined) {
+        throw new Error('missing required dependency injection: _');
+    }
+    return params;
+};
 
 var params = {
     asObjectId: asObjectId,
@@ -22,9 +31,10 @@ var params = {
     ensureType: ensureType,
 };
 
-module.exports = params;
-
 function asObjectId(value, default_value) {
+    if (mongoose === undefined) {
+        throw new Error('missing required dependency injection: mongoose');
+    }
     var id = default_value;
     try {
         if (typeof value !== 'undefined' && value !== null) {
@@ -176,7 +186,6 @@ function ensureType(expectedType, req, paramListName, paramName) {
     var okValue = fn(paramValue, dummy);
     if (okValue === dummy) {
         var message = `expected type '${expectedType}' for request '${paramListName}.${paramName}', but got '${actualType}' ('${paramValue}')`;
-        log.debug('ensureType:', message);
         throw new Error(message);
     }
     return okValue;

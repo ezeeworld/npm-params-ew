@@ -1,12 +1,9 @@
 'use strict';
 
 var assert = require('assert');
-var params = require('../params');
+var params = require('../params')({ _: require('lodash') });
 
 describe('module params', function() {
-  it('should be an object', function() {
-    assert.equal(typeof params, 'object');
-  });
   describe('asObjectId', function() {
     it('should be a function', function() {
       assert.equal(typeof params.asObjectId, 'function');
