@@ -1,7 +1,14 @@
-# url parameter handling and type conversion
+# URL parameter handling and type conversion
 
-usage :
+## Installation
 
+Compatible with ES5+
+
+```sh
+$ npm install --save params-ew
+```
+
+## Usage
 ```js
 try {
     var userId = params.ensureType('integer', req, 'query', 'user_id');
@@ -10,7 +17,14 @@ try {
 }
 ```
 
-# TODO
+## Running tests
 
-# complete documentation
-# complete test scenario
+```sh
+$ npm install --only=dev
+$ npm install mocha // or npm install -g mocha
+$ npm test
+```
+
+# TODO
+- complete documentation
+- complete tests

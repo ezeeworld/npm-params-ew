@@ -5,15 +5,18 @@
     "type" : "git",
     "url" : "https://github.com/ezeeworld/npm-params-ew.git"
   },
-  "version": "2.0.0",
-  "description": "",
+  "version": "2.1.0",
+  "description": "URL parameter handling and type conversion",
   "scripts": {
-    "test": "mocha test"
+    "test": "if test -f node_modules/.bin/mocha; then node_modules/.bin/mocha test; else mocha test; fi"
   },
-  "author": "",
+  "author": "Dominic Rose",
   "license": "ISC",
   "devDependencies": {
     "lodash": "",
     "mongoose": ""
+  },
+  "engines": {
+    "node" : ">=0.6"
   }
 }
