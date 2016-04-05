@@ -1,27 +1,18 @@
 'use strict';
 
+var _ = require('lodash');
+var mongoose = null;
+try {
+    mongoose = require('mongoose');
+} catch(e) {}
+
 var defaultOptions = {};
 
 module.exports = {
     new: new_,
 };
 
-function new_(inject, mainOptions) {
-    inject = inject || {};
-
-    var _;
-    try {
-        _ = inject.lodash || inject._ || require('lodash');
-    } catch(e) {}
-    if (_ === undefined) {
-        throw new Error('missing dependency injection or module: lodash');
-    }
-
-    var mongoose;
-    try {
-        mongoose = inject.mongoose || require('mongoose');
-    } catch(e) {}
-
+function new_(mainOptions) {
     mainOptions = _.cloneDeep(mainOptions || {});
     _.defaultsDeep(mainOptions, defaultOptions);
 
@@ -49,8 +40,8 @@ function new_(inject, mainOptions) {
     return instance;
 
     function asObjectId(value, default_value) {
-        if (mongoose === undefined) {
-            throw new Error('missing required dependency injection: mongoose');
+        if (mongoose === null) {
+            throw new Error('mongoose module is required by this function');
         }
         var id = default_value;
         try {
